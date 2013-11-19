@@ -1,0 +1,93 @@
+name =  raw_input('Howdydoodleydoo! What\'s your name?\n\t')
+
+if len(name) < 3:
+	name = raw_input('Don\'t try to trick me. Please tell me you name:\n\t')
+
+print '%s, so as to create your unique concept, we will ask you some questions.' % name
+
+raw_input('Hit \'ENTER\' whenever you are ready\n\t')
+
+answer1 = raw_input('On a scale from 0 to 10, how pink are you today?\n\t')
+
+answer1 = int(answer1)
+
+if answer1 == '0':
+# I have a problem when I type in '0' and I can't seem to find the answer.
+# Mental note: he understands '0' as a string. I should have placed zero between brackets.
+	answer1 = raw_input('%s, no pinkness in your life? Spice it up a little, would you? Add up to 10 grammes of pinkness.\n\tPlease type in a number from 1 to 10: ') % name
+# Why doesn it print '%s' and not 'name'. Does raw_input not take variables?
+elif int(answer1) and answer1 in range(0, 3):
+		answer2 = raw_input('Would you say that you could imagine life without chocolate? Please type \'YES\' or \'NO\'\n\t')
+		answer2 = answer2.upper()
+		if answer2 == 'YES':
+			answer5 = raw_input('On a scale from 0 to 10, how much do you remember from your life in Neverland?\n\t')
+			anser5 = int(answer5)
+			if answer5 in range(0, 4):
+				profile_type1 = 'Forgetty'
+			elif answer5 in range(4, 8):
+				profile_type1 = 'SomeHowRemembery'
+			else:
+				profile_type1 = 'TotalRemembrance'
+			print profile_type1
+		elif answer2 == 'NO':
+			answer6 = raw_input('C\'mon, tell me on a scale from 0 to 10 how much you love chocolate:\n\t')
+			answer6 = int(answer6)
+			if answer6 in range(0, 4):
+				profile_type2 = 'LittleChocolateRiddingHood'
+			elif answer6 in range(4, 8):
+				profile_type2 = 'PeterVanilla'
+			else:
+				profile_type2 = 'HotChocoBlack'
+			print profile_type2
+		else: 
+			answer2 = raw_input('Hey there, Skippy, you were supposed to answer by saying \'YES\' or \'No\'!\n\t')
+			answer2 = answer2.upper()
+# How do I make the user who did not write 'YES' or 'NO' the first time, go through the 'if' sequence once he replied. I should probably create a function, right?
+elif answer1 in range(4, 8):
+	answer3 = raw_input('How about a cup of hot coco? Please type \'YES\' or \'NO\'\n\t')
+	answer3 = answer3.upper()
+	if answer3 == 'YES':
+		answer7 = raw_input('On a scale from 0 to 10, how little do you use cinnamon in your dishes?\n\t')
+		answer7 = int(answer7)
+		if answer7 in range(0, 4):
+			profile_type3 = 'Sparkly'
+		elif answer7 in range(4, 8):
+			profile_type3 = 'Brighty'
+		else:
+			profile_type3 = 'GotMeBlindy'
+		print profile_type3
+	elif answer3 == 'NO':
+		answer8 = raw_input('If Mozart was to wake you up at 7 am on a Sunday morning, how much would you like to punch him on a scale from 0 to 7?\n\t')
+		answer8 = int(answer8)
+		if answer8 in range (0, 4):
+			profile_type4 = 'DoGoodersNeverPunch'
+		else:
+			profile_type4 = 'OutOfYourMindYouAre'
+		print profile_type4
+	else:
+		answer4 = raw_input('You must be a tea-lover, aren\'t you? Please type \'YES\' or \'NO\'\n\t')
+		answer4 = answer4.upper()
+		if answer4 == 'YES':
+			answer9 = raw_input('How much do you agree with Pink Floyd\'s statement: \'We don\'t need no education.\'? Responses from 0 to 10\n\t')
+			answer9 = int(answer9)
+			if answer9 in range(0, 4):
+				profile_type5 = 'UnEducated'
+			elif answer9 in (4, 8):
+				profile_type5 = 'MustHaveHighschool'
+			else:
+				profile_type5 = 'OverDegreed'
+			print profile_type5
+		elif answer4 == 'NO':
+			answer10 = raw_input('Do you care about wearing dispaired socks?\n\t You have three possible answer:\'Nopes\', \'Somewhat\' or \'Yes\'')
+			if answer10 == 'Nopes':
+				profile_type6 = 'Dispaired'
+			elif answer10 == 'Somewhat':
+				profile_type6 = 'OneOfAKind'
+			else:
+				profile_type6 = 'LikeSymmetry'
+			print profile_type6
+else:
+	answer1 = raw_input('Would you care to follow the rules and type in a number from 0 to 10, pretty please?\n\t')
+#How could I register all the profile_type variable in a global variable 'var'
+#print 'Your profile is: %s, %s, %s, %s, %s, %s, ' % profile_type1, profile_type2, profile_type3, profile_type4, profile_type5, profile_type6
+# I think that here I should make combinations of profile_type(s) and have the final outcome. 
